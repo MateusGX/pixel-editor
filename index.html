@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pixel Editor</title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <script src="editor.js"></script>
+        <script>
+            var tipos = [
+                new Tipo("Vermelho", "red"),
+                new Tipo("Azul", "blue"),
+                new Tipo("Verde", "green"),
+                new Tipo("Roxo", "purple"),
+                new Tipo("Amarelo", "yellow"),
+                new Tipo("Marrom", "brown"),
+                new Tipo("Preto", "black"),
+                new Tipo("Branco", "white"),
+                new Tipo("Cinza", "gray")
+            ]
+            var editor = new Editor(20, 20, tipos);
+            editor.gerarEditor("editor");
+        </script>
+    </body>
+</html>
