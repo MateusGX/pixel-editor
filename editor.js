@@ -173,8 +173,8 @@ class Editor{
     }
     gerarImg(){
         var canvas = document.createElement("canvas");
-        canvas.height = this.altura * 30;
-        canvas.width = this.largura * 30;
+        canvas.height = this.altura;
+        canvas.width = this.largura;
         var canvasContext = canvas.getContext("2d");
         if(this.win != null){
             this.win.close();
@@ -183,11 +183,11 @@ class Editor{
             for (let j = 0; j < this.largura; j++) {
                 if(this.matrizMapa[i][j] != 0){
                     canvasContext.fillStyle = this.tipos[this.matrizMapa[i][j] - 1].cor;
-                    canvasContext.fillRect((j * 30), (i * 30), 30, 30);
+                    canvasContext.fillRect((j), (i), 1, 1);
                 }
             }
         }
-        this.win = window.open("","Resultado (IMG)", `height=${this.altura * 30 + 6},width=${this.largura * 30 + 12}`);
+        this.win = window.open("","Resultado (IMG)", `height=${this.altura + 6},width=${this.largura + 12}`);
         this.win.document.write(`<img src=${canvas.toDataURL()}>`);
         this.win.document.body.style.background = "#D9DEED";
     }
